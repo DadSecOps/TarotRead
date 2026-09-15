@@ -2,11 +2,15 @@ import discord
 from discord.ext import commands
 import random
 import os
-import io                 # NEW: To handle images in memory
+import io                 
 from PIL import Image
+from dotenv import load_dotenv  # NEW: Import dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
 
 # --- CONFIGURATION ---
-TOKEN = "YOUR_TOKEN_HERE"  # Replace with your actual Bot Token
+TOKEN = os.getenv('DISCORD_TOKEN')  # NEW: Fetch token securely
 IMAGE_DIR = './images'
 
 # --- THEME CONFIGURATION ---
